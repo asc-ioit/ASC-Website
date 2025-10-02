@@ -29,16 +29,13 @@
     background: var(--hover-color);
     border-radius: 5rem;
 }
+
 body{
     font-family: "Outfit",sans-serif;
-    background-image: url(/bg.webp);
+    background-image: url(./bg.webp);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    
-}
-
-*{
     color:#fff;
 }
 
@@ -64,11 +61,9 @@ header{
 }
 
 .logo img{
-    max-width: 100%;
     width: 40px;
     height: auto;
 }
-
 
 header .navlist{
     display: flex;
@@ -99,7 +94,7 @@ header .navlist{
     height: 1px;
     background: var(--hover-color);
     border-radius: 50%;
-    transition: all .3s ease;;
+    transition: all .3s ease;
 }
 
 .navlist li .nav-item:hover::before{
@@ -127,6 +122,7 @@ header .navlist{
     transition: all .2s ease;
     white-space: nowrap;
     display: inline-block;
+    color:#000;
 }
 
 .marsBtn:hover{
@@ -150,27 +146,8 @@ section{
     position: absolute;
     left: 80%;
     margin-top: 20%;
-    opacity: 100;
-    background-attachment: fixed;
     width: 200px;
     height: auto;
-    /* animation: floatImg 6s ease-in-out infinite; */
-}
-
-.home-img img.moon-light{
-    left: -90%;
-    top:140%;
-}
-.earth-rotate img.earth{
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    z-index: -1;
-    width: calc(var(--index)*45);
-    /* animation: rotate 300s infinite linear; */
-    background-attachment: fixed;
 }
 
 .home{
@@ -178,7 +155,6 @@ section{
     display: grid;
     align-items: center;
     grid-template-columns: repeat(2 , 1fr);
-    color: #fff;
     width: 100%;
 }
 
@@ -189,53 +165,28 @@ section{
     text-shadow: 1px 1px 1px #474747;
 }
 
-.home-text .marsBtn{
-    margin-top: 1rem;
-    height: 35px;
-    line-height: 35px;
-}
-
 span{
     color: var(--hover-color);
 }
 
-.home-img{
-    position:relative;
-}
-
-img.moon-light{
-    position: absolute;
-    left:0;
-    mix-blend-mode: screen;
-    width: 90px;
-}
-
 /* Techno list css */
-
-.techno-list{
-    position: relative;
-}
-
 .techno-list .container{
     margin-top: 6rem;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    position: relative;
 }
 
 .container .techno-box{
     width: 300px;
     padding: 2rem 1.5rem 2rem;
     text-align: center;
-    background-image: url("/card4.jpg");
+    background-image: url(./card4.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 10px;
-    color:#fff;
-    z-index:2;
     margin: 2rem 2rem;
 }
 
@@ -246,55 +197,14 @@ img.moon-light{
     filter: drop-shadow(0 0 .5rem #179577);
 }
 
-.container .flight-box h2{
-    color: var(--hover-color);
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin: 0;
-}
-
-.flight-box p{
-    color: #dddcdc;
-    line-height: 1.5rem;
-    font-size: .9rem;
-}
-
- .marsBtn{
-    margin-top: 1rem;
-    height: 32px;
-    line-height: 32px;
-    color:#000;
-    font-size: 1rem;
-    font-weight: 700;
-}
-
 /* mission css */
-
 .rocket img{
     width: 350px;
     height: auto;
 }
 
-
-
-
-@keyframes rotate{
-    from{
-        transform: rotate(0deg);
-    }
-    to{
-        transform: rotate(360deg);
-    }
-}
-
 @keyframes floatImg{
-    0%{
-        transform: translateY(0);
-    }
-    50%{
-        transform: translateY(-14px);
-    }
-    100%{
-        transform: translateY(0);
-    }
+    0%{ transform: translateY(0);}
+    50%{ transform: translateY(-14px);}
+    100%{ transform: translateY(0);}
 }
