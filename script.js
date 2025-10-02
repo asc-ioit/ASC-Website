@@ -1,47 +1,44 @@
 function scrollTrigger(selector, options = {}){
-    let els = document.querySelectorAll(selector)
-    els = Array.from(els)
+    let els = document.querySelectorAll(selector);
+    els = Array.from(els);
     els.forEach(el => {
-        addObserver(el, options)
-    })
+        addObserver(el, options);
+    });
 }
 
 function addObserver(el, options){
     if(!('IntersectionObserver' in window)){
         if(options.cb){
-            options.cb(el)
+            options.cb(el);
         }else{
-            entry.target.classList.add('active')
+            el.classList.add('active');
         }
-        return
+        return;
     }
-    let observer = new IntersectionObserver((entries, observer) => { //this takes a callback function which receives two arguments: the elemts list and the observer instance
+    let observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if(entry.isIntersecting){
                 if(options.cb){
-                    options.cb(el)
+                    options.cb(el);
                 }else{
-                    entry.target.classList.add('active')
+                    entry.target.classList.add('active');
                 }
-                observer.unobserve(entry.target)
+                observer.unobserve(entry.target);
             }
-        })
-    }, options)
-    observer.observe(el)
+        });
+    }, options);
+    observer.observe(el);
 }
-// Example usages:
-scrollTrigger('.intro-text')
 
-scrollTrigger('.scroll-reveal', {
-    rootMargin: '-200px',
-})
-
+// Trigger animations
+scrollTrigger('.intro-text');
+scrollTrigger('.scroll-reveal', { rootMargin: '-200px' });
 scrollTrigger('.loader', {
     rootMargin: '-200px',
     cb: function(el){
-        el.innerText = 'Loading...'
+        el.innerText = 'Loading...';
         setTimeout(() => {
-            el.innerText = 'Task Complete!'
-        }, 1000)
+            el.innerText = 'Task Complete!';
+        }, 1000);
     }
-})
+});
